@@ -1,0 +1,29 @@
+<div mat-dialog-content>
+    <h1 mat-dialog-title>Update Segment</h1>
+    <form [formGroup]="editForm">
+        <mat-form-field>
+            <input matInput placeholder="SegmentId" formControlName="segmentId" required>
+            <mat-error *ngIf="editForm.controls?.segmentId.errors?.required">required field</mat-error>
+         </mat-form-field>
+        <mat-form-field>
+           <input matInput placeholder="SegmentCode" formControlName="segmentCode" required>
+           <mat-error *ngIf="editForm.controls?.segmentCode.errors?.required">required field</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="SegmentDesc" formControlName="segmentDesc" required>
+          <mat-error *ngIf="editForm.controls?.segmentDesc.errors?.required">required field</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="SegmentName" formControlName="segmentName" required>
+          <mat-error *ngIf="editForm.controls?.segmentName.errors?.required">required field</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="SegmentPrecedence" formControlName="segmentPrecedence" required>
+          <mat-error *ngIf="editForm.controls?.segmentPrecedence.errors?.required">required field</mat-error>
+        </mat-form-field>
+    </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button [disabled]="!editForm.valid" (click)="updateSegment()"mat-button [mat-dialog-close]="editForm.value">SAVE</button>
+    </div>

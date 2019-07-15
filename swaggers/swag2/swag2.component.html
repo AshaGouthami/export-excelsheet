@@ -1,0 +1,43 @@
+<button mat-icon-button (click)="ExportTOExcel()">
+<img src="https://images.idgesg.net/images/article/2017/06/microsoft_excel_logo_primary_resized2-100726640-large.jpg" 
+width="70%" height="50%">
+</button>
+  
+<table mat-table  [dataSource]="dataSource" matSort (matSortChange)="sortData($event)" >
+
+    <ng-container matColumnDef="segmentCode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'SegmentCode' | translate}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.segmentCode }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentDesc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'SegmentDesc' | translate}}</th>
+        <td mat-cell *matCellDef="let element"> {{element.segmentDesc}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'SegmentId' | translate}} </th>
+         <td mat-cell *matCellDef="let element"> {{element.segmentId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'SegmentName' | translate}} </th>
+         <td mat-cell *matCellDef="let element"> {{element.segmentName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentPrecedence">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'SegmentPrecedence' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.segmentPrecedence}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'Status' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+  </table>
+
+  <mat-paginator [pageSize]="5" [length]="10" [pageSizeOptions]="[5, 10]"></mat-paginator>
+  

@@ -1,0 +1,53 @@
+<div>
+  <form [formGroup]="Form">
+  <mat-form-field>
+    <input matInput placeholder="Enter Name" formControlName="prefix" required>
+  </mat-form-field><br>
+  <button mat-raised-button [disabled]="!Form.valid"(click)="data()">ENTER</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- private sub: any;
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.sub = this.router.events.subscribe(val => {
+      if (val instanceof RoutesRecognized) {
+        console.log(val.state.root.firstChild.params);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  } -->

@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+<h1 mat-dialog-title>Create Segment</h1>
+<form [formGroup]="segmentForm">
+    <mat-form-field>
+       <input matInput placeholder="SegmentCode" formControlName="segmentCode" required>
+       <mat-error *ngIf="segmentForm.controls?.segmentCode.errors?.required">required field</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="SegmentDesc" formControlName="segmentDesc" required>
+      <mat-error *ngIf="segmentForm.controls?.segmentDesc.errors?.required">required field</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="SegmentName" formControlName="segmentName" required>
+      <mat-error *ngIf="segmentForm.controls?.segmentName.errors?.required">required field</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="SegmentPrecedence" formControlName="segmentPrecedence" required>
+      <mat-error *ngIf="segmentForm.controls?.segmentPrecedence.errors?.required">required field</mat-error>
+    </mat-form-field>
+</form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button [disabled]="!segmentForm.valid" (click)=" createSegment()" mat-button [mat-dialog-close]="segmentForm.value">SAVE</button>
+</div>
+                    

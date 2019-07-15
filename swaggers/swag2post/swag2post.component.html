@@ -1,0 +1,64 @@
+ <!-- <table mat-table  [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
+
+  <ng-container matColumnDef="segmentId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SegmentId </th>
+      <td mat-cell *matCellDef="let element"> {{element.segmentId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentCode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SegmentCode </th>
+      <td mat-cell *matCellDef="let element"> {{element.segmentCode}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentDesc">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>SegmentDesc </th>
+      <td mat-cell *matCellDef="let element"> {{element.segmentDesc}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentName">
+       <th mat-header-cell *matHeaderCellDef mat-sort-header>SegmentName </th>
+       <td mat-cell *matCellDef="let element"> {{element.segmentName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="segmentPrecedence">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>SegmentPrecedence </th>
+        <td mat-cell *matCellDef="let element"> {{element.segmentPrecedence}} </td>
+     </ng-container>
+ 
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+  </table>  -->
+  
+  
+    <div>
+      <button mat-raised-button class="button" (click)="openDialogCreate()" >Add   
+        <mat-icon>person</mat-icon>
+      </button>
+    </div> 
+  <div>
+    <div *ngFor="let data of segmentdata">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item class="button" (click)="openDialogEdit()">edit
+              <mat-icon>edit</mat-icon>
+              </button>
+            </mat-menu>    
+    <!-- <button mat-raised-button class="button" (click)="openDialogEdit()">Edit</button> -->
+        <mat-card-title>id:{{data.segmentId}}</mat-card-title>
+          <mat-card-subtitle>
+            <b>segmentCode:</b>{{data.segmentCode}}<br>
+            <b>segmentDesc:</b>{{data.segmentDesc}}<br>
+            <b>segmentName:</b>{{data.segmentName}}<br>
+            <b>segmentPrecedence:</b>{{data.segmentPrecedence}}<br>
+          </mat-card-subtitle>
+        </mat-card-header>
+       </mat-card>
+    </div>
+  </div>
+
+   

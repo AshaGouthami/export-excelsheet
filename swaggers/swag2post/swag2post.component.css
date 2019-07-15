@@ -1,0 +1,11 @@
+/* table{
+    width: 100%;
+} */
+
+mat-card{
+    width:300px;
+    background-color:pink;
+    color:white;
+    margin: 10px;
+    float: left;   
+}

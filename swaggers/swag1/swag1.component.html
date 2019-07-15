@@ -1,0 +1,37 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" (blur)="blur()">
+</mat-form-field>
+
+
+<table mat-table  [dataSource]="dataSource" matSort >
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef>FirstName </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName==null ? 'N/A' : element.firstName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> LastName </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName==null ? 'N/A' : element.lastName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="loginId">
+    <th mat-header-cell *matHeaderCellDef> loginId </th>
+    <td mat-cell *matCellDef="let element"> {{element.loginId==null ? 'N/A' : element.loginId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email==null ? 'N/A' : element.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="phoneNumber">
+    <th mat-header-cell *matHeaderCellDef> phoneNumber </th>
+    <td mat-cell *matCellDef="let element"> {{element.phoneNumber==null ? 'N/A' : element.phoneNumber}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+</table>
+
+
+<mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[250,500,750,1000]" showFirstLastButtons></mat-paginator>

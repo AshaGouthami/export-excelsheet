@@ -1,0 +1,12 @@
+/* .abc{
+    border:2px solid black;
+    width:500px;
+}
+.table table-bordered{
+    border:1px solid black;
+} */
+
+
+table {
+    width: 100%;
+  }
